@@ -1,0 +1,10 @@
+export const BASE = "/";
+export const ADMIN = "/admin";
+export const LOGIN = "/admin/login";
+export const DASHBOARD = "/admin/dashboard";
+export const NO_MATCH = "*";
+export const SIGN_UP = "/admin/signup";
+export const ALL_POSTS = "/admin/all-posts";
+export const DRAFTS = "/admin/drafts";
+export const IDEAS = "/admin/ideas";
+export const TODO_LIST = "/admin/todo-list";

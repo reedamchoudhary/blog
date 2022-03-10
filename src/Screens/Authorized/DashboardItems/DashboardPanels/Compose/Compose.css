@@ -1,0 +1,18 @@
+.compose-post {
+  width: 96%;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-title {
+  width: 100%;
+}
+
+.post-body {
+  width: 100%;
+  margin: 20px 0px 20px 0px;
+}
+
+.action-buttons {
+  margin: 10px;
+}

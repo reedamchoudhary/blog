@@ -1,0 +1,81 @@
+.dashboard {
+  background-color: #1f1d36;
+  width: 100vw;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1.5px;
+  justify-content: center;
+}
+
+.navbar {
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #1f1d36;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 15px 10px #112;
+}
+
+.navbar-items {
+  justify-content: flex-start;
+  align-items: center;
+  height: 70%;
+  width: 100%;
+}
+
+.icon {
+  position: relative;
+  left: 80px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.hover-pink:hover {
+  color: #e9a6a6;
+}
+
+.hamburger-icon {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.compose-button {
+  border: 1px solid #e9a6a6;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  padding: 0px 30px;
+  margin: 50px 0px 20px 0px;
+  color: #e9a6a6;
+}
+
+.compose-button:hover {
+  background-color: #e9a6a6;
+  color: #1f1d36;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: none !important;
+}
+
+.work-area {
+  height: 100vh;
+}
+
+.title {
+  width: 96%;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-toggle {
+  margin-top: 40px;
+}
