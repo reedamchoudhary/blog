@@ -5,6 +5,8 @@ import "./Compose.css";
 import { useDashboard } from "../../../Dashboard";
 import { useComposeContext } from "./Compose";
 import PrimaryButton from "../../../../../components/PrimaryButton";
+import API from "../../../../../Services/Api";
+import { API_URL } from "../../../../../constants/ApiUrls";
 
 const Actions = () => {
   const [actions] = useState(["Save", "Draft", "Discard"]);
@@ -14,17 +16,7 @@ const Actions = () => {
   const pushPost = (item) => {
     console.log("item=", item);
     if (item === "Save") {
-      axios
-        .post(
-          `https://rhythmdev-f2352-default-rtdb.firebaseio.com/blog.json`,
-          JSON.stringify({
-            postTitle,
-            postBody,
-          })
-        )
-        .then((response) => {
-          console.log("response=", response);
-        });
+      API.post(API_URL.POST_ARTICLE, { postTitle, postBody });
     } else if (item === "Draft") {
       console.log("draft");
     } else if (item === "Discard") {
