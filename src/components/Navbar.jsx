@@ -12,7 +12,6 @@ const Navbar = (props) => {
 
   const findPath = (item) => {
     setActiveArea(item);
-    console.log("item=", item);
     if (item === "All Posts") setPath(allPaths.ALL_POSTS);
     else if (item === "Drafts") setPath(allPaths.DRAFTS);
     else if (item === "Ideas") setPath(allPaths.IDEAS);

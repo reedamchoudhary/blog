@@ -9,7 +9,6 @@ import ToDoList from "./DashboardPanels/ToDoList/ToDoList";
 const Body = () => {
   const { activeArea } = useDashboard();
 
-  console.log("active area=", activeArea);
   return (
     <>
       {activeArea === "All Posts" ? (

@@ -4,7 +4,6 @@ import { useComposeContext } from "./Compose";
 
 const PostTitle = () => {
   const { postTitle, setPostTitle, theme } = useComposeContext();
-  console.log("post title in component=", postTitle);
   return (
     <>
       <Box className="post-title">

@@ -14,7 +14,6 @@ const Actions = () => {
   const { postTitle, postBody } = useComposeContext();
 
   const pushPost = (item) => {
-    console.log("item=", item);
     if (item === "Save") {
       API.post(API_URL.POST_ARTICLE, { postTitle, postBody });
     } else if (item === "Draft") {

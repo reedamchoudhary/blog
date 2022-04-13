@@ -1,5 +1,4 @@
 .dashboard {
-  background-color: #1f1d36;
   width: 100vw;
   min-height: 100vh;
   font-family: "Montserrat", sans-serif;
@@ -10,13 +9,12 @@
 .navbar {
   justify-content: center;
   align-items: flex-start;
-  background-color: #1f1d36;
   width: 200px;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  box-shadow: 3px 3px 15px 10px #112;
+  /* box-shadow: 3px 3px 15px 10px #112; */
 }
 
 .navbar-items {

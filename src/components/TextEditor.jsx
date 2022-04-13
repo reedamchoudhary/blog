@@ -1,24 +1,70 @@
-import React, { useState } from "react";
-import { Editor } from "react-draft-wysiwyg";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { EditorState } from "draft-js";
+import React from "react";
+import "react-quill/dist/quill.snow.css";
+import ReactQuill from "react-quill";
 
-const TextEditor = () => {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+class TextEditor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: "" }; // You can also pass a Quill Delta here
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-  const onEditorStateChange = (editorState) => {
-    setEditorState(editorState);
-  };
-  return (
-    <Editor
-      className="editor"
-      editorState={editorState}
-      toolbarClassName="toolbarClassName"
-      wrapperClassName="wrapperClassName"
-      editorClassName="editorClassName"
-      onEditorStateChange={onEditorStateChange}
-    />
-  );
+  handleChange(value) {
+    this.setState({ text: value });
+  }
+
+  render() {
+    console.log("data=", this.state.text);
+    this.props.setPostBody(this.state.text);
+    return (
+      <ReactQuill
+        theme={"snow"}
+        onChange={this.handleChange}
+        value={this.state.text}
+        modules={TextEditor.modules}
+        formats={TextEditor.formats}
+        // bounds={".app"}
+        // placeholder={this.props.placeholder}
+      />
+    );
+  }
+}
+
+TextEditor.modules = {
+  toolbar: [
+    [{ header: "1" }, { header: "2" }, { font: [] }],
+    [{ size: [] }],
+    ["bold", "italic", "underline", "strike", "blockquote"],
+    [
+      { list: "ordered" },
+      { list: "bullet" },
+      { indent: "-1" },
+      { indent: "+1" },
+    ],
+    ["link", "image", "video"],
+    ["clean"],
+  ],
+  clipboard: {
+    // toggle to add extra line breaks when pasting HTML:
+    matchVisual: false,
+  },
 };
+
+TextEditor.formats = [
+  "header",
+  "font",
+  "size",
+  "bold",
+  "italic",
+  "underline",
+  "strike",
+  "blockquote",
+  "list",
+  "bullet",
+  "indent",
+  "link",
+  "image",
+  "video",
+];
 
 export default TextEditor;

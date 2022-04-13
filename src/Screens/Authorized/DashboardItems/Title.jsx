@@ -27,7 +27,7 @@ const Title = () => {
       ) : (
         <Image src={logoLight} w={"150px"} h={"80px"} />
       )}
-      <ThemeSwitch />
+      {/* <ThemeSwitch /> */}
       <Box margin={"10px"} position={"fixed"} top={"0px"} right={"20px"}>
         <ProfileMenu handleLogout={handleLogout} />
       </Box>

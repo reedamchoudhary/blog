@@ -5,7 +5,6 @@ import { useDashboard } from "../../Dashboard";
 
 const ThemeSwitch = () => {
   const { theme, toggleTheme } = useDashboard();
-  console.log("theme=", theme);
   return (
     <Box className={"theme-toggle"}>
       {theme === "light" ? (

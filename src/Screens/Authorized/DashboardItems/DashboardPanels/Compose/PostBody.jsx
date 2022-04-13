@@ -6,10 +6,12 @@ import "./Compose.css";
 
 const PostBody = () => {
   const { postBody, setPostBody, theme } = useComposeContext();
+
+  console.log(postBody);
   return (
     <>
       <Box className="post-body">
-        <Textarea
+        {/* <Textarea
           placeholder="Start pouring your creativity here..."
           value={postBody}
           h={"500px"}
@@ -20,8 +22,8 @@ const PostBody = () => {
           fontSize={"16px"}
           onChange={(e) => setPostBody(e.target.value)}
           focusBorderColor={theme === "light" ? "brand.200" : "brand.100"}
-        />
-        {/* <Box
+        /> */}
+        <Box
           h={"500px"}
           overflowY={"Scroll"}
           color={theme === "dark" ? "white" : "black"}
@@ -30,8 +32,8 @@ const PostBody = () => {
           fontSize={"16px"}
           focusBorderColor={theme === "light" ? "brand.200" : "brand.100"}
         >
-          <TextEditor />
-        </Box> */}
+          <TextEditor setPostBody={setPostBody} />
+        </Box>
       </Box>
     </>
   );

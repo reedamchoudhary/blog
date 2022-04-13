@@ -13,7 +13,7 @@ const Dashboard = () => {
   const { isOpen, onToggle } = useDisclosure();
   const [path, setPath] = useState("");
   const [activeArea, setActiveArea] = useState("");
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const { user } = useUserAuth();
   const navigate = useNavigate();
 
