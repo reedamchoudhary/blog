@@ -1,13 +1,22 @@
 import { Box, Textarea } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useComposeContext } from "./Compose";
 import TextEditor from "../../../../../components/TextEditor";
 import "./Compose.css";
 
 const PostBody = () => {
-  const { postBody, setPostBody, theme } = useComposeContext();
+  const { postBody, setPostBody, theme, setPostEngagement } =
+    useComposeContext();
 
-  console.log(postBody);
+  useEffect(() => {
+    let wordCount = 0;
+    for (let i = 0; i < postBody.length; i++) {
+      if (postBody[i] === " ") ++wordCount;
+    }
+
+    setPostEngagement(Math.ceil(wordCount / 200));
+  }, [postBody]);
+
   return (
     <>
       <Box className="post-body">
@@ -27,10 +36,9 @@ const PostBody = () => {
           h={"500px"}
           overflowY={"Scroll"}
           color={theme === "dark" ? "white" : "black"}
-          borderColor={theme === "dark" ? "white" : "brand.400"}
-          border={theme === "light" ? "2px" : "1px"}
           fontSize={"16px"}
-          focusBorderColor={theme === "light" ? "brand.200" : "brand.100"}
+          focusBorderColor={"white"}
+          border={"1px solid gray"}
         >
           <TextEditor setPostBody={setPostBody} />
         </Box>

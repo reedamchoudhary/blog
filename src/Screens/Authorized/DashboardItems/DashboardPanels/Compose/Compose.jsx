@@ -12,6 +12,8 @@ const ComposeContext = createContext();
 const Compose = () => {
   const [postTitle, setPostTitle] = useState("");
   const [postBody, setPostBody] = useState("");
+  const [postDescription, setPostDescription] = useState("");
+  const [postEngagement, setPostEngagement] = useState(0);
   const { theme, toggleTheme } = useDashboard();
 
   const push = () => {
@@ -33,6 +35,10 @@ const Compose = () => {
         theme,
         toggleTheme,
         push,
+        postDescription,
+        setPostDescription,
+        postEngagement,
+        setPostEngagement,
       }}
     >
       <Flex className="compose-post" flexDirection={"column"}>

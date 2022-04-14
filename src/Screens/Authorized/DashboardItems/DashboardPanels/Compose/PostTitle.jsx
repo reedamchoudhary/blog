@@ -1,22 +1,38 @@
 import React from "react";
-import { Box, Input } from "@chakra-ui/react";
+import { Box, Input, Textarea } from "@chakra-ui/react";
 import { useComposeContext } from "./Compose";
 
 const PostTitle = () => {
-  const { postTitle, setPostTitle, theme } = useComposeContext();
+  const {
+    postTitle,
+    setPostTitle,
+    theme,
+    postDescription,
+    setPostDescription,
+  } = useComposeContext();
   return (
     <>
       <Box className="post-title">
         <Input
           placeholder="POST TITLE"
           value={postTitle}
-          h={"70px"}
+          h={"40px"}
           color={theme === "dark" ? "white" : "brand.400"}
-          borderColor={theme === "dark" ? "white" : "brand.400"}
-          border={theme === "light" ? "2px" : "1px"}
-          fontSize={"25px"}
+          fontSize={"18px"}
           onChange={(e) => setPostTitle(e.target.value)}
-          focusBorderColor={theme === "light" ? "brand.200" : "brand.100"}
+          focusBorderColor={"gray"}
+          border={"1px solid gray"}
+          marginBottom={"10px"}
+        />
+        <Textarea
+          placeholder="DESCRIPTION"
+          value={postDescription}
+          h={"40px"}
+          color={theme === "dark" ? "white" : "brand.400"}
+          fontSize={"18px"}
+          onChange={(e) => setPostDescription(e.target.value)}
+          focusBorderColor={"gray"}
+          border={"1px solid gray"}
         />
       </Box>
     </>

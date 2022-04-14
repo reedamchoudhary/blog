@@ -14,7 +14,6 @@ class TextEditor extends React.Component {
   }
 
   render() {
-    console.log("data=", this.state.text);
     this.props.setPostBody(this.state.text);
     return (
       <ReactQuill
@@ -23,6 +22,7 @@ class TextEditor extends React.Component {
         value={this.state.text}
         modules={TextEditor.modules}
         formats={TextEditor.formats}
+        style={{ height: "91%" }}
         // bounds={".app"}
         // placeholder={this.props.placeholder}
       />

@@ -11,11 +11,20 @@ import { API_URL } from "../../../../../constants/ApiUrls";
 const Actions = () => {
   const [actions] = useState(["Save", "Draft", "Discard"]);
   const { theme } = useDashboard();
-  const { postTitle, postBody } = useComposeContext();
+  const { postTitle, postBody, postDescription, postEngagement } =
+    useComposeContext();
 
   const pushPost = (item) => {
+    var options = { year: "numeric", month: "long", day: "numeric" };
+
     if (item === "Save") {
-      API.post(API_URL.POST_ARTICLE, { postTitle, postBody });
+      API.post(API_URL.POST_ARTICLE, {
+        postTitle,
+        postBody,
+        Description: postDescription,
+        Engagement: postEngagement,
+        Date: new Date().toLocaleDateString("en-US", options),
+      });
     } else if (item === "Draft") {
       console.log("draft");
     } else if (item === "Discard") {
