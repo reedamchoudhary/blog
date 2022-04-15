@@ -34,7 +34,7 @@ TextEditor.modules = {
   toolbar: [
     [{ header: "1" }, { header: "2" }, { font: [] }],
     [{ size: [] }],
-    ["bold", "italic", "underline", "strike", "blockquote"],
+    ["bold", "italic", "underline", "strike", "blockquote", "code"],
     [
       { list: "ordered" },
       { list: "bullet" },
@@ -59,6 +59,7 @@ TextEditor.formats = [
   "underline",
   "strike",
   "blockquote",
+  "code",
   "list",
   "bullet",
   "indent",

@@ -17,6 +17,8 @@ const PostBody = () => {
     setPostEngagement(Math.ceil(wordCount / 200));
   }, [postBody]);
 
+  console.log(postBody);
+
   return (
     <>
       <Box className="post-body">
